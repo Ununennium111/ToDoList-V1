@@ -4,12 +4,17 @@ require('dotenv').config();
 
 const connectDB = require('./db/connect');
 const notFound = require('./middlewares/not-found');
+const tasks = require('./routes/tasks-routes');
+
 
 const app = express();
 
 // Middlewares
 app.use(express.json());
 app.use(morgan('dev'));
+
+// Routes
+app.use('/api/v1/tasks', tasks);
 
 app.use(notFound);
 
