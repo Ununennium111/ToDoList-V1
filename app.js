@@ -5,7 +5,7 @@ require('dotenv').config();
 const connectDB = require('./db/connect');
 const notFound = require('./middlewares/not-found');
 const tasks = require('./routes/tasks-routes');
-
+const errorHandler = require('./middlewares/error-handler');
 
 const app = express();
 
@@ -17,6 +17,7 @@ app.use(morgan('dev'));
 app.use('/api/v1/tasks', tasks);
 
 app.use(notFound);
+app.use(errorHandler);
 
 app.set('port', process.env.PORT)
 
