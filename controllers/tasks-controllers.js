@@ -17,10 +17,22 @@ const createTask = asyncWrapper(async (req, res, next) => {
 
     await newTask.save();
 
-    return res.status(200).json({msg: 'Task created'});
+    return res.status(200).json({ msg: 'Task created' });
+});
+
+const deleteTask = asyncWrapper(async (req, res, next) => {
+    const { id: taskID } = req.params;
+    const task = await Task.findByIdAndDelete(taskID);
+
+    if(!task){
+        return next(createCustomError(`There is no task with id : ${taskID}`, 404));
+    }
+
+    return res.status(200).json({task});
 });
 
 module.exports = {
     getAllTasks,
-    createTask
+    createTask,
+    deleteTask
 }
