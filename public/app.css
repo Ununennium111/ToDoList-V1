@@ -1,0 +1,80 @@
+body {
+    background-color: #9854d8;
+}
+
+#task-form {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#task-form h3 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+#task-form input {
+    display: block;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid grey;
+    outline: none;
+    width: 100%;
+    height: 20px;
+}
+
+#task-form input:focus {
+    border-bottom: 2px solid green;
+}
+
+#task-form button {
+    width: 95%;
+    margin-left: 5px;
+    height: 35px;
+    background-color: #9d65d1;
+    border: none;
+    border-radius: 8px;
+}
+
+#task-form button:hover {
+    background-color: #8443c2;
+    cursor: pointer;
+}
+
+#task-form div {
+    margin-top: 15px;
+}
+
+
+#tasks-container-section {
+    margin-top: 50px;
+    background-color: white;
+    display: inline-block;
+    padding: 20px;
+    padding-top: 0;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, 0%);
+}
+
+.single-task {
+    background-color: #af81db;
+    padding: 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.single-task h4{
+    margin: 0;
+    margin-bottom: 15px;
+}
